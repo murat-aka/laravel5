@@ -3,11 +3,17 @@
 
 @section('content')
 
-  <h1>justin bieber official fun club</h1>
+
     
-    @foreach($songs as $index => $song)
+    @foreach($songs as $song)
     
-        <li><a href="/songs/{{ $index }}">{{ $song }}</a></li>
+        <li><a href="/songs/{{ $song -> slug }}">
+            
+            
+            {{ $song -> title }}
+        
+        
+        </a></li>
     
     @endforeach
 

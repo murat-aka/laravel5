@@ -9,7 +9,7 @@
        
     </head>
     <body>
-        
+        <h1>justin bieber official fun club</h1>
         @yield('content')
     </body>
 </html>

@@ -12,25 +12,30 @@ use App\Song;
 class SongsController extends Controller
 {
     //
-    
-    
-    public function index(Song $song){
+    public function __construct(Song $song){
         
-        $songs = $song ->get();
+        $this -> song = $song;
+        
+    }
+    
+    public function index(){
+        
+        $songs = $this -> $song ->get();
         
         return view('songs.index', compact('songs'));
         
     }
     
-    public function show(Song $song){
+    public function show($slug){
         
-        
+        $song = $this -> song -> whereSlug($slug) -> first();
         return view('songs.show', compact('song'));
     }
     
-    public function edit(Song $song){
+    public function edit($slug){
         
-        return 'Edit the title with' . $song -> title;
+          $song = $this -> song -> whereSlug($slug) -> first();
+      return view('songs.edit', compact('song'));
     }
     
     
