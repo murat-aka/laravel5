@@ -15,7 +15,7 @@ class PagesController extends Controller
         
         $lessons = ['ma first lesson','my second lesson', 'my third lesson'];
         
-        return view('pages.home',compact('lessons'));
+        return view('pages.home')->withName('jesff way');
         
     }
     
