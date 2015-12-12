@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Song;
+
 class SongsController extends Controller
 {
     //
@@ -14,7 +16,7 @@ class SongsController extends Controller
     
     public function index(){
         
-        $songs = $this -> getSongs();
+        $songs = Song::get();
         
         return view('songs.index', compact('songs'));
         
@@ -22,7 +24,7 @@ class SongsController extends Controller
     
     public function show($id){
         
-        $song = $this -> getSongs()[$id];
+        $song = Song::find($id);
         return view('songs.show', compact('song'));
     }
     
