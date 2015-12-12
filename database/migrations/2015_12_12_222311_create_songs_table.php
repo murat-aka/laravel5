@@ -16,6 +16,7 @@ class CreateSongsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('lyrics')->nullable();
+            $table->string('slug')-> unique();
             $table->timestamps();
         });
     }
@@ -33,3 +34,13 @@ class CreateSongsTable extends Migration
 
 
 //php artisan make:migration create_songs_table --create="songs"
+
+//$song -> title =  "as long as you love me"
+
+//$song -> slug = "as-long-as-you-love-me"
+
+//$song -> toArray();
+
+// $song -> save();
+
+//App\Song::all();

@@ -22,9 +22,9 @@ class SongsController extends Controller
         
     }
     
-    public function show($id){
+    public function show($slug){
         
-        $song = Song::find($id);
+        $song = Song::whereSlug($slug)->first();
         return view('songs.show', compact('song'));
     }
     
