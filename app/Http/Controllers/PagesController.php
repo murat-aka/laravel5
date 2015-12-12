@@ -15,7 +15,7 @@ class PagesController extends Controller
         
         $lessons = ['ma first lesson','my second lesson', 'my third lesson'];
         
-        return view('pages.home',['lessons' => $lessons]);
+        return view('pages.home',compact('lessons'));
         
     }
     
