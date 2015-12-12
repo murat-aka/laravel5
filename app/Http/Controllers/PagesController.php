@@ -13,7 +13,9 @@ class PagesController extends Controller
     
     public function index(){
         
-        return view('pages.home');
+        $lessons = ['ma first lesson','my second lesson', 'my third lesson'];
+        
+        return view('pages.home',['lessons' => $lessons]);
         
     }
     
