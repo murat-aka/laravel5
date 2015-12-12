@@ -32,11 +32,21 @@
 
 // );
 
-Route::model('song', 'App\Song');
+Route::bind('song', function($slug){
+    
+    return App\Song::whereSlug($slug)->first();
+    
+}
+
+
+
+
+);
 
 Route::get('songs', 'SongsController@index');
 
 get('songs/{song}', 'SongsController@show');
+get('songs/{song}/edit', 'SongsController@edit');
 
 
 
