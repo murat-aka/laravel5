@@ -16,15 +16,23 @@
 // });
 
 
-Route::get('/','PagesController@index');
-Route::get('about','PagesController@about');
+// Route::get('/','PagesController@index');
+// Route::get('about','PagesController@about');
 
-Route::get('about',function(){
+// Route::get('about',function(){
     
     
-    return 'about';
-}
+//     return 'about';
+// }
 
 
 
-);
+
+
+
+// );
+
+Route::get('songs', 'SongsController@index');
+
+
+
