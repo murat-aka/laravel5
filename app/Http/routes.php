@@ -32,9 +32,11 @@
 
 // );
 
+Route::model('song', 'App\Song');
+
 Route::get('songs', 'SongsController@index');
 
-get('songs/{id}', 'SongsController@show');
+get('songs/{song}', 'SongsController@show');
 
 
 

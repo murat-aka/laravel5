@@ -14,26 +14,20 @@ class SongsController extends Controller
     //
     
     
-    public function index(){
+    public function index(Song $song){
         
-        $songs = Song::get();
+        $songs = $song ->get();
         
         return view('songs.index', compact('songs'));
         
     }
     
-    public function show($slug){
+    public function show(Song $song){
         
-        $song = Song::whereSlug($slug)->first();
+        
         return view('songs.show', compact('song'));
     }
     
     
-    public function getSongs(){
-        
-        $songs = ['be allright', 'for u', 'nic'];
-        
-        return $songs;
-        
-    }
+
 }
