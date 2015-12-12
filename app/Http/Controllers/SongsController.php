@@ -14,9 +14,24 @@ class SongsController extends Controller
     
     public function index(){
         
-        $songs = ['be allright', 'for u', 'nic'];
+        $songs = $this -> getSongs();
         
         return view('songs.index', compact('songs'));
+        
+    }
+    
+    public function show($id){
+        
+        $song = $this -> getSongs()[$id];
+        return view('songs.show', compact('song'));
+    }
+    
+    
+    public function getSongs(){
+        
+        $songs = ['be allright', 'for u', 'nic'];
+        
+        return $songs;
         
     }
 }

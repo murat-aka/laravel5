@@ -5,9 +5,9 @@
 
   <h1>justin bieber official fun club</h1>
     
-    @foreach($songs as $song)
+    @foreach($songs as $index => $song)
     
-        <li>{{ $song }}</li>
+        <li><a href="/songs/{{ $index }}">{{ $song }}</a></li>
     
     @endforeach
 

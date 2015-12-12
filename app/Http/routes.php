@@ -34,5 +34,7 @@
 
 Route::get('songs', 'SongsController@index');
 
+get('songs/{id}', 'SongsController@show');
+
 
 
