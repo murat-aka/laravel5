@@ -3,9 +3,18 @@
 
 @section('content')
 
-  <h1>justin bieber official fun club</h1>
+
     
- <h2>{{ $song }}</h2>
+ <h2>{!! $song -> title !!}</h2>
+ 
+     @if
+         <article class = 'lyrics'>
+             
+             {!! nl2br($song -> lyrics) !!}
+             
+         </article>
+         
+    @endif
 
   
 
